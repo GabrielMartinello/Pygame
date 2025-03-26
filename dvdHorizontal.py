@@ -4,6 +4,7 @@ from dvd import MoveText
 
 class MoveTextHorizontal(MoveText):
     def __init__(self, text, font_size, initial_color, screen_width, screen_height):
+        """Inicializa a classe"""
         self.font = pygame.font.SysFont(None, font_size)
         self.color = initial_color
         self.text = text
@@ -19,6 +20,7 @@ class MoveTextHorizontal(MoveText):
         self.screen_height = screen_height
 
     def update(self):
+        """Método para ir para direita e esquerda"""
         self.rect.x += self.speed_x
 
         if self.rect.left <= 0:

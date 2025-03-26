@@ -6,6 +6,7 @@ from audioController import AudioController
 
 class MoveTextQuicar(MoveText):
     def __init__(self, text, font_size, initial_color, screen_width, screen_height):
+        """Inicializa a classe"""
         self.font = pygame.font.SysFont(None, font_size)
         self.color = initial_color
         self.text = text
@@ -22,6 +23,7 @@ class MoveTextQuicar(MoveText):
         self.audio_controller = AudioController()
 
     def update(self):
+        """Altera para ir para esquerda e direita"""
         self.rect.x += self.speed_x
         self.rect.y += self.speed_y
 
@@ -39,6 +41,7 @@ class MoveTextQuicar(MoveText):
 
     def quicar(self):
         print(self.rect.top)
+        """Método para quicar"""
         if self.rect.top <= TOP_QUICAR:
             self.speed_y = 1
             super().change_color() 

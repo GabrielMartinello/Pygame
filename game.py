@@ -17,7 +17,7 @@ from audioController import AudioController
 
 class Game:
     def __init__(self):
-
+        """Classe principal para rodar o jogo"""
         pygame.init()
 
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -33,14 +33,17 @@ class Game:
                 self.running = False
 
     def update(self):
+        """Altera as posições"""
         self.text.update()
 
     def draw(self):
+        """Desenha a tela"""
         self.screen.fill(PRETO)
         self.text.draw(self.screen)
         pygame.display.flip()
 
     def run(self):
+        """Método para configurações iniciais e comportamentos"""
         self.audio_controller.tocarMuscia()
         while self.running:
             self.events()

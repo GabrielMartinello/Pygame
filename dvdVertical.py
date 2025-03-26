@@ -4,6 +4,7 @@ from dvd import MoveText
 
 class MoveTextVertical(MoveText):
     def __init__(self, text, font_size, initial_color, screen_width, screen_height):
+        """Inicializa a classe com seus atributos"""
         self.font = pygame.font.SysFont(None, font_size)
         self.color = initial_color
         self.text = text
@@ -19,6 +20,7 @@ class MoveTextVertical(MoveText):
         self.screen_height = screen_height
 
     def update(self):
+        """Altera para subir e descer e muda a cor"""
         self.rect.y += self.speed_y
 
         if self.rect.top <= 0:
